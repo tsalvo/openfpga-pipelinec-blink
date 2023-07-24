@@ -42,7 +42,7 @@
 # ========================
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:31:36  JANUARY 22, 2020"
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name PRE_FLOW_SCRIPT_FILE "quartus_sh:apf/build_id_gen.tcl"
 set_global_assignment -name SMART_RECOMPILE ON
@@ -744,6 +744,15 @@ set_global_assignment -name SDC_FILE core/core_constraints.sdc
 set_global_assignment -name SIGNALTAP_FILE core/stp1.stp
 set_global_assignment -name QIP_FILE core/mf_pllbase.qip
 set_global_assignment -name SIP_FILE core/mf_pllbase.sip
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/built_in/BIN_OP_EQ_uint27_t_uint27_t/BIN_OP_EQ_uint27_t_uint27_t_0CLK_de264c78.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/built_in/BIN_OP_PLUS_uint27_t_uint1_t/BIN_OP_PLUS_uint27_t_uint1_t_0CLK_de264c78.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/built_in/MUX_uint1_t_uint1_t_uint1_t/MUX_uint1_t_uint1_t_uint1_t_0CLK_de264c78.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/built_in/MUX_uint1_t_uint27_t_uint27_t/MUX_uint1_t_uint27_t_uint27_t_0CLK_de264c78.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/built_in/UNARY_OP_NOT_uint1_t/UNARY_OP_NOT_uint1_t_0CLK_de264c78.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/c_structs_pkg.pkg.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/blink/blink_0CLK_a5a1cd4e.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/top/top_2bae.vhd
+set_global_assignment -name VHDL_FILE core/pipelinec_output_blink.c_1/top/top.vhd
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to bridge_1wire
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to bridge_spiclk
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to bridge_spimiso

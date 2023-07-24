@@ -1,0 +1,20 @@
+BIN_OP_EQ_uint27_t_uint27_t MaxInputWidth= 27 num_instances= 1 :
+BIN_OP_EQ_uint27_t_uint27_t main: blink MaxInputWidth= 27 num_instances= 1 :
+blink/BIN_OP_EQ[blink_c_l17_c6_55fe]
+
+BIN_OP_PLUS_uint27_t_uint1_t MaxInputWidth= 27 num_instances= 1 :
+BIN_OP_PLUS_uint27_t_uint1_t main: blink MaxInputWidth= 27 num_instances= 1 :
+blink/BIN_OP_PLUS[blink_c_l26_c5_f181]
+
+MUX_uint1_t_uint1_t_uint1_t MaxInputWidth= 1 num_instances= 1 :
+MUX_uint1_t_uint1_t_uint1_t main: blink MaxInputWidth= 1 num_instances= 1 :
+blink/led_MUX[blink_c_l17_c3_de29]
+
+MUX_uint1_t_uint27_t_uint27_t MaxInputWidth= 27 num_instances= 1 :
+MUX_uint1_t_uint27_t_uint27_t main: blink MaxInputWidth= 27 num_instances= 1 :
+blink/counter_MUX[blink_c_l17_c3_de29]
+
+UNARY_OP_NOT_uint1_t MaxInputWidth= 1 num_instances= 1 :
+UNARY_OP_NOT_uint1_t main: blink MaxInputWidth= 1 num_instances= 1 :
+blink/UNARY_OP_NOT[blink_c_l20_c12_345e]
+

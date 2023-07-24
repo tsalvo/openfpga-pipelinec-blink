@@ -494,8 +494,23 @@ core_bridge_cmd icb (
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+// Blink module Output
+// synchronous to clk_74a
+wire blink_c_out;
 
 
+////////////////////////////////////////////////////////////////////////////////////////
+//
+// sychronizers for getting stuff from clk_74 into the video pixel
+// clock domain (clk_core_12288/video_rgb_clock)
+//
+// this is very necessary and should not be neglected!
+//
+wire			blink_c_out_s;
+synch_3         s2(blink_c_out, blink_c_out_s, video_rgb_clock);
+
+////////////////////////////////////////////////////////////////////////////////////////
+//
 // video generation
 // ~12,288,000 hz pixel clock
 //
@@ -591,17 +606,18 @@ always @(posedge clk_core_12288 or negedge reset_n) begin
                 // data enable. this is the active region of the line
                 vidout_de <= 1;
                 
-                vidout_rgb[23:16] <= 8'd60;
-                vidout_rgb[15:8]  <= 8'd60;
-                vidout_rgb[7:0]   <= 8'd60;
+                if (blink_c_out_s) begin
+                    vidout_rgb[23:16] <= 8'd127;
+                end else begin
+                    vidout_rgb[23:16] <= 8'd0;
+                end
+                vidout_rgb[15:8]  <= 8'd0;
+                vidout_rgb[7:0]   <= 8'd0;
                 
             end 
         end
     end
 end
-
-
-
 
 //
 // audio i2s silence generator
@@ -670,6 +686,13 @@ mf_pllbase mp1 (
     .locked         ( pll_core_locked )
 );
 
+// blink.c example module, exported from PipelineC into VHDL
+// Given a clock of 74.25MHz, it should flip the value of blink_return_output every ~1 second
+top top
+(
+.clk_74p25(clk_74a),
 
+.blink_return_output(blink_c_out),
+);
     
 endmodule
